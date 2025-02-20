@@ -64,7 +64,6 @@ test:
 
 app:
   entry: python -m papylio
-  icon: icon.png
   summary: Papylio {{ version }}
   type: desk
 
