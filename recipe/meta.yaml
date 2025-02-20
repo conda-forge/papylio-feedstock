@@ -62,6 +62,12 @@ test:
     - python {{ python_min }}
     - pip
 
+app:
+  entry: python -m papylio
+  icon: icon.png
+  summary: Papylio {{ version }}
+  type: desk
+
 about:
   home: https://github.com/Chirlmin-Joo-lab/papylio
   summary: Single-molecule fluorescence data extraction and analysis.
