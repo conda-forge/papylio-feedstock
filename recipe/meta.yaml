@@ -1,5 +1,5 @@
 {% set name = "papylio" %}
-{% set version = "0.7.1" %}
+{% set version = "0.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/papylio-{{ version }}.tar.gz
-  sha256: caa04c1070965bd8f31931b58d7a78b4660ac214ed5c690dc66e86d69612a630
+  sha256: ce6d376560bab24e8c1528327863bf5e5cbbb5ed559b338360df732bbebd2851
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
