@@ -14,9 +14,9 @@ build:
   noarch: python
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-    - mkdir -p "{{ PREFIX }}/Menu" # [unix]
-    - cp "{{ RECIPE_DIR }}/papylio.ico" "{{ PREFIX }}/Menu/papylio.ico" # [unix]
-    - cp "{{ RECIPE_DIR }}/papylio_menu.json" "{{ PREFIX }}/Menu/papylio_menu.json" # [unix]
+    - mkdir -p "{{ PREFIX }}/Menu"  # [unix]
+    - cp "{{ RECIPE_DIR }}/papylio.ico" "{{ PREFIX }}/Menu/papylio.ico"  # [unix]
+    - cp "{{ RECIPE_DIR }}/papylio_menu.json" "{{ PREFIX }}/Menu/papylio_menu.json"  # [unix]
     - if not exist "%PREFIX%\Menu" mkdir "%PREFIX%\Menu"  # [win]
     - copy /Y "%RECIPE_DIR%\papylio.ico" "%PREFIX%\Menu\papylio.ico"  # [win]
     - copy /Y "%RECIPE_DIR%\papylio_menu.json" "%PREFIX%\Menu\papylio_menu.json"  # [win]
