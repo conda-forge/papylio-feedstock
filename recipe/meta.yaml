@@ -1,5 +1,6 @@
 {% set name = "papylio" %}
 {% set version = "0.8" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
@@ -11,8 +12,15 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  script:
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+    - mkdir -p "{{ PREFIX }}/Menu" # [unix]
+    - cp "{{ RECIPE_DIR }}/papylio.ico" "{{ PREFIX }}/Menu/papylio.ico" # [unix]
+    - cp "{{ RECIPE_DIR }}/papylio_menu.json" "{{ PREFIX }}/Menu/papylio_menu.json" # [unix]
+    - if not exist "%PREFIX%\Menu" mkdir "%PREFIX%\Menu"  # [win]
+    - copy /Y "%RECIPE_DIR%\papylio.ico" "%PREFIX%\Menu\papylio.ico"  # [win]
+    - copy /Y "%RECIPE_DIR%\papylio_menu.json" "%PREFIX%\Menu\papylio_menu.json"  # [win]
+  number: 1
 
 requirements:
   host:
@@ -50,6 +58,7 @@ requirements:
     - pomegranate ==0.14.8
     - matchpoint >=1.0.4,<1.1
     - objectlist >=1.0,<1.1
+    - menuinst
 
 test:
   imports:
@@ -64,7 +73,8 @@ test:
 
 app:
   entry: python -m papylio
-  summary: Papylio {{ version }}
+  summary: Software for surface-based single-molecule fluorescence data analysis
+  icon: papylio.png
   type: desk
 
 about:
