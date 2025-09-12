@@ -6,7 +6,7 @@
       "name": "Papylio",
 	  "description": "Software for surface-based single-molecule fluorescence data analysis",
 	  "command": ["python", "-m", "papylio"],
-	  "pywscript": "-m papylio",
+	  "pyscript": "-m papylio",
 	  "icon": "{{ MENU_DIR }}/papylio.{{ ICON_EXT }}",
       "platforms": {
         "linux": {},
