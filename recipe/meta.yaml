@@ -1,5 +1,5 @@
 {% set name = "papylio" %}
-{% set version = "0.8" %}
+{% set version = "0.9" %}
 {% set python_min = "3.9" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/papylio-{{ version }}.tar.gz
-  sha256: ce6d376560bab24e8c1528327863bf5e5cbbb5ed559b338360df732bbebd2851
+  sha256: 16910e45ccdb3a38695512da884813a1755ff20956b66a3cbec2247d9e322e6b
 
 build:
   noarch: python
@@ -20,7 +20,7 @@ build:
     - if not exist "%PREFIX%\Menu" mkdir "%PREFIX%\Menu"  # [win]
     - copy /Y "%RECIPE_DIR%\papylio.ico" "%PREFIX%\Menu\papylio.ico"  # [win]
     - copy /Y "%RECIPE_DIR%\papylio_menu.json" "%PREFIX%\Menu\papylio_menu.json"  # [win]
-  number: 2
+  number: 0
 
 requirements:
   host:
@@ -52,7 +52,6 @@ requirements:
     - bottleneck >=1.3,<1.4
     - tifffile >=2022.10.10,<2022.11
     - tqdm >=4.63
-    - hmmlearn >=0.2.7,<0.2.8
     - pyside2 >=5.13,<5.14
     - numba >=0.56,<0.57
     - pomegranate ==0.14.8
