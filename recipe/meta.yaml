@@ -57,7 +57,7 @@ requirements:
     - pomegranate ==0.14.8
     - matchpoint >=1.0.4,<1.1
     - objectlist >=1.0,<1.1
-    - menuinst
+    - menuinst >=2.4.2
 
 test:
   imports:
