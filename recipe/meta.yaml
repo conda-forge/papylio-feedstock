@@ -1,14 +1,14 @@
 {% set name = "papylio" %}
-{% set version = "0.10.2" %}
+{% set version = "0.11" %}
 {% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/papylio-{{ version }}.tar.gz
-  sha256: 504f11eb2225e81edef58f4320914db58804a594253fca79fb21f51a2aa31813
+  sha256: 41054a0d397661fec9de50727b4bf0ed29a79c4d93ba7ed3f4825e427fbed938
 
 build:
   noarch: python
