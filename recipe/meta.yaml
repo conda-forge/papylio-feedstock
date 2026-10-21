@@ -1,5 +1,5 @@
 {% set name = "papylio" %}
-{% set version = "0.12.1" %}
+{% set version = "0.12.2" %}
 {% set python_min = "3.9" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/papylio-{{ version }}.tar.gz
-  sha256: bc8d821021a5d3217f9289ed3d095f0b93936b97a8db712c82837f04bca880b7
+  sha256: 71c2592926c2a57abc64c1cfc319b27b315daff436520751be1ae3950dd5397b
 
 build:
   noarch: python
